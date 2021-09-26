@@ -11,7 +11,17 @@
   "dependencies": {
     "next": "11.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "@reduxjs/toolkit": "^1.6.1",
+    "nanoid": "^3.1.25",
+    "@chakra-ui/react": "^1.6.8",
+    "@chakra-ui/icons": "^1.0.15",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "framer-motion": "^4.1.17",
+    "react-icons": "^4.2.0",
+    "lodash.throttle": "^4.1.1",
+    "redux-devtools-extension": "^2.13.9"
   },
   "devDependencies": {
     "eslint": "7.32.0",
