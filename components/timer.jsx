@@ -11,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import {timerActions} from "./timerSlice";
 import {tickerActions} from "./tickerSlice";
+import {membersActions} from "./membersSlice";
 
 export default function Timer() {
     const {remainingSeconds, isRunning, isStarted} = useSelector((state) => state.timer);
@@ -70,8 +71,10 @@ export default function Timer() {
 
     function startTimer() {
         let {setTime, start} = timerActions;
+        let startMembers = membersActions.start;
         dispatch(setTime(timeInSecs));
         dispatch(start());
+        dispatch(startMembers())
     }
 
     function resume() {

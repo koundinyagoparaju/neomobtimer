@@ -79,6 +79,13 @@ const membersSlice = createSlice({
             state.isValid = isValid;
             state.validationMessage = validationMessage;
             state.members = members;
+        },
+        start(state, action) {
+            let {members} = state;
+            let member = getNextNonSkippedMember(members, -1);
+            if(member) {
+                member.isActive = true;
+            }
         }
     },
     extraReducers: {
