@@ -52,6 +52,6 @@ export default function ShareableLink() {
     }
 
     function getShareableUrl() {
-        return `http://localhost:3000?loadFrom=${btoa(JSON.stringify(getState()))}`;
+        return `https://neomobtimer.vercel.app?loadFrom=${btoa(JSON.stringify(getState()))}`;
     }
 }
