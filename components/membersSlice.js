@@ -27,6 +27,8 @@ const membersSlice = createSlice({
                let nextMember = getNextNonSkippedMember(members, memberIndex);
                members[memberIndex].isActive = false;
                nextMember.isActive = true;
+           } else {
+               members[memberIndex].isSkippedOnce = true;
            }
             validate(state);
         },
