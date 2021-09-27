@@ -8,7 +8,7 @@ import {timerActions} from "../components/timerSlice";
 import {getState, hasState} from "../helpers/storage";
 import {useState} from "react";
 import ShareableLink from "../components/shareableLink";
-import {Stack, StackDivider} from "@chakra-ui/react";
+import {Link, Stack, StackDivider} from "@chakra-ui/react";
 
 export default function Home({query}) {
     const loadMembersState = membersActions.loadState;
@@ -24,6 +24,7 @@ export default function Home({query}) {
             <Head>
                 <title>Create Next App</title>
                 <meta name="description" content="A timer which can be used in mob programming"/>
+                <meta name="google-site-verification" content="EzaJS1PHcPOrLEF_NB8-d7wXN23Ub3ZUNN2oNJ-pUD0" />
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
@@ -42,6 +43,10 @@ export default function Home({query}) {
                     <ShareableLink/>
                 </Stack>
             </main>
+
+            {/*<footer>*/}
+            {/*    <Link href="https://github.com/koundinyagoparaju/neomobtimer">Github</Link>*/}
+            {/*</footer>*/}
         </div>
     );
 
