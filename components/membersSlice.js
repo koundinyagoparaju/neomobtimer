@@ -82,7 +82,14 @@ const membersSlice = createSlice({
         },
         start(state, action) {
             let {members} = state;
-            let member = getNextNonSkippedMember(members, -1);
+            let activeMemberIndex = getMemberIndex(members, memberSelectorByActiveStatus(true));
+            let member;
+            if(activeMemberIndex === -1) {
+                member = getNextNonSkippedMember(members, -1);
+            } else {
+                member = members[activeMemberIndex];
+            }
+
             if(member) {
                 member.isActive = true;
             }
@@ -130,7 +137,7 @@ function getMemberIndex(members, memberSelector) {
     for (let i = 0; i < members.length; i++) {
         if (memberSelector(members[i])) return i;
     }
-    return -1; //This is ideally not possible
+    return -1;
 }
 
 function validate(state) {
