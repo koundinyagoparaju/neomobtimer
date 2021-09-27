@@ -45,9 +45,9 @@ export default function Home({query}) {
                 </Stack>
             </main>
 
-            {/*<footer>*/}
-            {/*    <Link href="https://github.com/koundinyagoparaju/neomobtimer">Github</Link>*/}
-            {/*</footer>*/}
+            <footer>
+                <Link href="https://github.com/koundinyagoparaju/neomobtimer">Github</Link>
+            </footer>
         </div>
     );
 
