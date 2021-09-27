@@ -22,9 +22,10 @@ export default function Home({query}) {
     return (
         <div className={styles.container}>
             <Head>
-                <title>Create Next App</title>
+                <title>Neo Mob timer</title>
                 <meta name="description" content="A timer which can be used in mob programming"/>
                 <meta name="google-site-verification" content="EzaJS1PHcPOrLEF_NB8-d7wXN23Ub3ZUNN2oNJ-pUD0" />
+                <link rel="canonical" href="https://neomobtimer.vercel.app"/>
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
