@@ -8,5 +8,4 @@ Following is the functionality of the app.
 7. Members can be skipped once or skipped until they are explicitly un-skipped later.
 8. Shuffle the order of the users.
 9. Delete a user from the list
-#10. Change the user-name
-11. Shareable url for the current state
+10. Shareable url for the current state
