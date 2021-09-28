@@ -6,7 +6,8 @@ const membersSlice = createSlice({
     initialState: {
         isValid: false,
         validationMessage: "Add at-least two members",
-        members: []
+        members: [],
+        activeMember: "",
     },
     reducers: {
         add(state, action) {
@@ -26,6 +27,7 @@ const membersSlice = createSlice({
            if(members[memberIndex].isActive) {
                let nextMember = getNextNonSkippedMember(members, memberIndex);
                members[memberIndex].isActive = false;
+               state.activeMember = nextMember.name;
                nextMember.isActive = true;
            } else {
                members[memberIndex].isSkippedOnce = true;
@@ -91,6 +93,7 @@ const membersSlice = createSlice({
             }
 
             if(member) {
+                state.activeMember = member.name;
                 member.isActive = true;
             }
         }
@@ -105,6 +108,7 @@ const membersSlice = createSlice({
                 state.isValid = false;
                 state.validationMessage = "Cannot find any member to make active";
             } else {
+                state.activeMember = nextMember.name;
                 nextMember.isActive = true;
             }
         }

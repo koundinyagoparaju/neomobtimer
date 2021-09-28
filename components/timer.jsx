@@ -12,10 +12,12 @@ import {
 import {timerActions} from "./timerSlice";
 import {tickerActions} from "./tickerSlice";
 import {membersActions} from "./membersSlice";
+import {sendNotification} from "../helpers/notificationManager";
 
 export default function Timer() {
     const {remainingSeconds, isRunning, isStarted} = useSelector((state) => state.timer);
     const {tickerId} = useSelector((state) => state.ticker);
+    const {activeMember} = useSelector((state) => state.members.activeMember);
     const dispatch = useDispatch();
     const [timeInSecs, setTimeInSecs] = useState(20 * 60);
     useEffect(() => {
@@ -27,13 +29,13 @@ export default function Timer() {
             }, 1000);
             dispatch(tickerCreated(createdTickerId));
         }
-    },  [isRunning, tickerId, dispatch]);
-
-    if(remainingSeconds <= 0) {
-        let {finished} = timerActions;
-        playSound();
-        dispatch(finished());
-    }
+        if(remainingSeconds < 0) {
+            let {finished} = timerActions;
+            playSound();
+            sendNotification(activeMember);
+            dispatch(finished());
+        }
+    },  [isRunning, tickerId, dispatch, activeMember, remainingSeconds]);
 
     return (<Stack alignItems="center">
         <Text fontWeight="bold" fontSize="40"

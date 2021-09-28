@@ -9,6 +9,7 @@ import {getState, hasState} from "../helpers/storage";
 import {useState} from "react";
 import ShareableLink from "../components/shareableLink";
 import {Link, Stack, StackDivider} from "@chakra-ui/react";
+import {askForNotificationPermission} from "../helpers/notificationManager";
 
 export default function Home({query}) {
     const loadMembersState = membersActions.loadState;
@@ -19,6 +20,7 @@ export default function Home({query}) {
         setInitialStateLoaded(true);
         buildInitialState();
     }
+    askForNotificationPermission();
     return (
         <div className={styles.container}>
             <Head>

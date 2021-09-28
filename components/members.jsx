@@ -39,7 +39,7 @@ export default function Members() {
                 {members.map(member => <Member member={member} key={member.id}/>)}
             </Stack>
             <StackDivider/>
-            <Input name="add-members" value={memberNames} onChange={onChange} onKeyPress={saveMembers}/>
+            <Input name="add-members" placeholder="Add members" value={memberNames} onChange={onChange} onKeyPress={saveMembers}/>
             <StackDivider/>
             <Center>
                 <Button onClick={shuffle}>

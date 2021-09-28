@@ -21,7 +21,8 @@
     "framer-motion": "^4.1.17",
     "react-icons": "^4.2.0",
     "lodash.throttle": "^4.1.1",
-    "redux-devtools-extension": "^2.13.9"
+    "redux-devtools-extension": "^2.13.9",
+    "react-redux": "^7.2.5"
   },
   "devDependencies": {
     "eslint": "7.32.0",
