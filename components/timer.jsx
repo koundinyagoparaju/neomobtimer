@@ -6,7 +6,7 @@ import {
     NumberIncrementStepper,
     NumberInput,
     NumberInputField,
-    NumberInputStepper, Spacer, Stack, StackDivider,
+    NumberInputStepper, Stack, StackDivider,
     Text
 } from "@chakra-ui/react";
 import {timerActions} from "./timerSlice";
@@ -15,11 +15,11 @@ import {membersActions} from "./membersSlice";
 import {sendNotification} from "../helpers/notificationManager";
 
 export default function Timer() {
-    const {remainingSeconds, isRunning, isStarted} = useSelector((state) => state.timer);
+    const {totalSeconds, remainingSeconds, isRunning, isStarted} = useSelector((state) => state.timer);
     const {tickerId} = useSelector((state) => state.ticker);
     const {activeMember} = useSelector((state) => state.members.activeMember);
     const dispatch = useDispatch();
-    const [timeInSecs, setTimeInSecs] = useState(20 * 60);
+    const [timeInSecs, setTimeInSecs] = useState(totalSeconds);
     useEffect(() => {
         if(isRunning && tickerId < 0) {
             let {tickerCreated} = tickerActions;
@@ -29,7 +29,7 @@ export default function Timer() {
             }, 1000);
             dispatch(tickerCreated(createdTickerId));
         }
-        if(remainingSeconds < 0) {
+        if(remainingSeconds <= 0) {
             let {finished} = timerActions;
             playSound();
             sendNotification(activeMember);
