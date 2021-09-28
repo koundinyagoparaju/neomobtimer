@@ -8,7 +8,7 @@ import {timerActions} from "../components/timerSlice";
 import {getState, hasState} from "../helpers/storage";
 import {useState} from "react";
 import ShareableLink from "../components/shareableLink";
-import {Link, Stack, StackDivider} from "@chakra-ui/react";
+import {Link, Stack, StackDivider, Text} from "@chakra-ui/react";
 import {askForNotificationPermission} from "../helpers/notificationManager";
 
 export default function Home({query}) {
@@ -24,12 +24,11 @@ export default function Home({query}) {
     return (
         <div className={styles.container}>
             <Head>
+                <html lang="en" />
                 <title>Neo Mob timer</title>
                 <meta name="description" content="A timer which can be used in mob programming"/>
                 <meta name="google-site-verification" content="EzaJS1PHcPOrLEF_NB8-d7wXN23Ub3ZUNN2oNJ-pUD0" />
-                <link rel="canonical" href="https://neomobtimer.vercel.app/"/>
                 <link rel="icon" href="/favicon.ico"/>
-                <link rel="alternate" href="https://neomobtimer.vercel.app/" hrefLang="en"/>
             </Head>
 
             <main className={styles.main}>
