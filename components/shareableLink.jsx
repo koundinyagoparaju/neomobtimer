@@ -52,6 +52,6 @@ export default function ShareableLink() {
     }
 
     function getShareableUrl() {
-        return `https://neomobtimer.vercel.app?loadFrom=${btoa(JSON.stringify(getState()))}`;
+        return `https://mobtimer.crazycoding.tech?loadFrom=${btoa(JSON.stringify(getState()))}`;
     }
 }
