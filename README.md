@@ -1,3 +1,5 @@
+App can be accessed at https://mobtimer.crazycoding.tech
+
 Following is the functionality of the app.
 1. Members can be added to the timer either through entering each username or pasting a list of comma seperated users.
 2. Ability to add the time in the timer.
