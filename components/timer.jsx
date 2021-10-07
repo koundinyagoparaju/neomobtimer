@@ -17,7 +17,7 @@ import {sendNotification} from "../helpers/notificationManager";
 export default function Timer() {
     const {totalSeconds, remainingSeconds, isRunning, isStarted} = useSelector((state) => state.timer);
     const {tickerId} = useSelector((state) => state.ticker);
-    const {activeMember} = useSelector((state) => state.members.activeMember);
+    const activeMember = useSelector((state) => state.members.activeMember);
     const dispatch = useDispatch();
     const [timeInSecs, setTimeInSecs] = useState(totalSeconds);
     useEffect(() => {
