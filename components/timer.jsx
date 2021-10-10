@@ -12,7 +12,6 @@ import {
 import {timerActions} from "./timerSlice";
 import {tickerActions} from "./tickerSlice";
 import {membersActions} from "./membersSlice";
-import {sendNotification} from "../helpers/notificationManager";
 
 export default function Timer() {
     const {totalSeconds, remainingSeconds, isRunning, isStarted} = useSelector((state) => state.timer);
@@ -31,8 +30,6 @@ export default function Timer() {
         }
         if(remainingSeconds <= 0) {
             let {finished} = timerActions;
-            playSound();
-            sendNotification(activeMember);
             dispatch(finished());
         }
     },  [isRunning, tickerId, dispatch, activeMember, remainingSeconds]);
@@ -88,10 +85,5 @@ export default function Timer() {
         let minutes= Math.floor(numOfSeconds / 60), seconds = numOfSeconds % 60;
 
         return `${minutes}:${String(seconds).padStart(2, "0")}`;
-    }
-
-    function playSound() {
-        const audio = new Audio('/notification.mp3');
-        audio.play().catch(err => console.log(err));
     }
 }
