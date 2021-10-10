@@ -25,7 +25,7 @@ export default function Home({query}) {
         <div className={styles.container}>
             <Head>
                 <html lang="en" />
-                <title>Neo Mob timer</title>
+                <title>Mob timer</title>
                 <meta name="description" content="A timer which can be used in mob programming"/>
                 <meta name="google-site-verification" content="LEX7F0JLWRkAZuamUP0vx_d3enp7tIlNBBhRLqoZBQw" />
                 <link rel="icon" href="/favicon.ico"/>

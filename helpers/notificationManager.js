@@ -8,7 +8,7 @@ export function askForNotificationPermission() {
 
 export function sendNotification(userName) {
     if(hasNotificationCapability() && isNotificationPermissionGranted()) {
-        let notification = new Notification("NeoMob timer", {
+        let notification = new Notification("Mob timer", {
             body: `It is ${userName}'s turn now!`,
             requireInteraction: true,
             silent: false,
