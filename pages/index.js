@@ -1,17 +1,15 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import Members from "../components/members";
-import Timer from "../components/timer";
 import {membersActions} from "../components/membersSlice";
 import {useDispatch} from "react-redux";
 import {timerActions} from "../components/timerSlice";
 import {getState, hasState} from "../helpers/storage";
 import {useState} from "react";
-import ShareableLink from "../components/shareableLink";
-import {Link, Stack, StackDivider, Text} from "@chakra-ui/react";
+import {Link} from "@chakra-ui/react";
 import {askForNotificationPermission} from "../helpers/notificationManager";
+import Application from "../components/application";
 
-export default function Home({query}) {
+export default function Home() {
     const loadMembersState = membersActions.loadState;
     const loadTimerState = timerActions.loadState;
     const dispatch = useDispatch();
@@ -23,28 +21,13 @@ export default function Home({query}) {
     askForNotificationPermission();
     return (
         <div className={styles.container}>
-            <Head>
-                <html lang="en" />
-                <title>Mob timer</title>
-                <meta name="description" content="A timer which can be used in mob programming"/>
-                <meta name="google-site-verification" content="LEX7F0JLWRkAZuamUP0vx_d3enp7tIlNBBhRLqoZBQw" />
-                <link rel="icon" href="/favicon.ico"/>
-            </Head>
-
             <main className={styles.main}>
                 <h1 className={styles.title}>
                     Mob timer
                 </h1>
 
-                <Stack>
-                    <Timer/>
-                    <Members/>
-                    <StackDivider/>
-                    <StackDivider/>
-                    <StackDivider/>
-                    <StackDivider/>
-                    <ShareableLink/>
-                </Stack>
+                <Application/>
+
             </main>
 
             <footer>
@@ -55,9 +38,10 @@ export default function Home({query}) {
 
     function buildInitialState() {
         let state;
-        if (query && query["loadFrom"]) {
+        const queryParams = typeof window !== "undefined" && window.location && new URLSearchParams(window.location.search);
+        if (queryParams && queryParams.has("loadFrom")) {
             try {
-                const stateString = atob(query["loadFrom"]);
+                const stateString = atob(queryParams.get("loadFrom"));
                 state = JSON.parse(stateString);
             } catch (e) {
                 console.log("unable to load state from url");
@@ -72,8 +56,4 @@ export default function Home({query}) {
             dispatch(loadTimerState(state.timer));
         }
     }
-}
-
-Home.getInitialProps = ({query}) => {
-    return {query}
 }
