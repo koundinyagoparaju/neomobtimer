@@ -2,10 +2,7 @@ import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import Member from "./member";
 import {
-    Button,
-    Center,
-    Input,
-    Stack, StackDivider
+    Button, Center, Input, Stack, StackDivider
 } from "@chakra-ui/react";
 import {membersActions} from "./membersSlice";
 
@@ -30,16 +27,16 @@ export default function Members() {
 
     function shuffle() {
         let {shuffle} = membersActions;
-        dispatch(shuffle());
+        dispatch(shuffle(undefined));
     }
 
-    return (
-        <Stack>
+    return (<Stack>
             <Stack align="stretch" alignItems="stretch" overscrollY="true">
                 {members.map(member => <Member member={member} key={member.id}/>)}
             </Stack>
             <StackDivider/>
-            <Input name="add-members" placeholder="Add members" value={memberNames} onChange={onChange} onKeyPress={saveMembers}/>
+            <Input name="add-members" placeholder="Add members" value={memberNames} onChange={onChange}
+                   onKeyPress={saveMembers}/>
             <StackDivider/>
             <Center>
                 <Button onClick={shuffle}>
@@ -48,6 +45,5 @@ export default function Members() {
             </Center>
         </Stack>
 
-    )
-        ;
+    );
 }

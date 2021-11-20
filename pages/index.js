@@ -7,6 +7,7 @@ import {useState} from "react";
 import {Link} from "@chakra-ui/react";
 import {askForNotificationPermission} from "../helpers/notificationManager";
 import Application from "../components/application";
+import AppInfo from "../components/appInfo";
 
 export default function Home() {
     const loadMembersState = membersActions.loadState;
@@ -20,10 +21,12 @@ export default function Home() {
     askForNotificationPermission();
     return (
         <div className={styles.container}>
+            <AppInfo/>
             <main className={styles.main}>
                 <h1 className={styles.title}>
                     Mob timer
                 </h1>
+
 
                 <Application/>
 

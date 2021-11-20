@@ -1,3 +1,5 @@
+// noinspection JSValidateTypes
+
 import React from "react";
 import {useDispatch} from "react-redux";
 import {membersActions} from './membersSlice';
@@ -69,7 +71,7 @@ export default function Member({member}) {
         const {reset} = timerActions;
         if(isActive) {
             dispatch(skipOnce(id));
-            dispatch(reset());
+            dispatch(reset(undefined));
         } else {
             dispatch(skipOnce(id));
         }
