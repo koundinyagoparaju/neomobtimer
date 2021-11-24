@@ -12,7 +12,7 @@ export function sendNotification(userName) {
             body: `It is ${userName}'s turn now!`,
             requireInteraction: true,
             silent: false,
-            icon: "/steeringwheel.png"
+            icon: "/steeringwheel.webp"
         });
         notification.onerror = (event) => {
             console.log(event);

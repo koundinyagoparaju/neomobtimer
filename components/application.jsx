@@ -11,8 +11,6 @@ export default function Application() {
         <Members/>
         <StackDivider/>
         <StackDivider/>
-        <StackDivider/>
-        <StackDivider/>
         <ShareableLink/>
         <Notification />
     </Stack>;

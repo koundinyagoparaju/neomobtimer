@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import {timerActions} from "../components/timerSlice";
 import {getState, hasState} from "../helpers/storage";
 import {useState} from "react";
-import {Link} from "@chakra-ui/react";
+import {HStack, Link, Spacer} from "@chakra-ui/react";
 import {askForNotificationPermission} from "../helpers/notificationManager";
 import Application from "../components/application";
 import AppInfo from "../components/appInfo";
@@ -33,7 +33,10 @@ export default function Home() {
             </main>
 
             <footer>
-                <Link href="https://github.com/koundinyagoparaju/neomobtimer">Github</Link>
+                <HStack spacing={6}>
+                    <Link href="https://github.com/koundinyagoparaju/neomobtimer">Github</Link>
+                    <Link href="https://github.com/koundinyagoparaju/neomobtimer/issues/new">Report Issue</Link>
+                </HStack>
             </footer>
         </div>
     );
