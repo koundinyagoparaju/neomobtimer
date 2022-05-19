@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^1.1.7",
-    "@chakra-ui/react": "^1.8.8",
+    "@chakra-ui/icons": "^2.0.0",
+    "@chakra-ui/react": "^2.0.0",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@reduxjs/toolkit": "^1.8.1",
@@ -18,7 +18,7 @@
     "lodash.throttle": "^4.1.1",
     "nanoid": "^3.3.3",
     "next": "^12.1.5",
-    "react": "^18.0.0",
+    "react": "^18.1.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
     "react-redux": "^8.0.1",
