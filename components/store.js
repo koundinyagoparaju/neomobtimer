@@ -4,7 +4,7 @@ import {timerReducer} from "./timerSlice";
 import {saveState} from "../helpers/storage";
 import throttle from 'lodash.throttle';
 import {tickerReducer} from "./tickerSlice";
-import {composeWithDevTools} from "redux-devtools-extension";
+import {composeWithDevTools} from "@redux-devtools/extension";
 
 
 const store = configureStore({
