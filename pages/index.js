@@ -4,7 +4,7 @@ import {useDispatch} from "react-redux";
 import {timerActions} from "../components/timerSlice";
 import {getState, hasState} from "../helpers/storage";
 import {useState} from "react";
-import {HStack, Link, Spacer} from "@chakra-ui/react";
+import {HStack, Link} from "@chakra-ui/react";
 import {askForNotificationPermission} from "../helpers/notificationManager";
 import Application from "../components/application";
 import AppInfo from "../components/appInfo";
