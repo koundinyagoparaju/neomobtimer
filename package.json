@@ -13,7 +13,7 @@
     "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@reduxjs/toolkit": "^1.8.1",
+    "@reduxjs/toolkit": "^2.2.4",
     "framer-motion": "^10.16.4",
     "lodash.throttle": "^4.1.1",
     "nanoid": "^4.0.0",
