@@ -13,7 +13,7 @@ const store = configureStore({
         timer: timerReducer,
         ticker: tickerReducer
     },
-    enhancers: composeWithDevTools({})
+    enhancers: composeWithDevTools()
 });
 
 //credits: https://medium.com/@jrcreencia/persisting-redux-state-to-local-storage-f81eb0b90e7e
